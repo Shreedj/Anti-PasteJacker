@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Test Anti PasteJacker",
+    "description": "Detects malicious content copied to the clipboard.",
+    "version": "1.0",
+    "permissions": ["clipboardRead", "notifications"],
+    "background": {
+      "service_worker": "background.js",
+      "type":"module"
+    },
+    "action": {
+      "default_popup": "popup/popup.html",
+      "default_icon": "images/hello_extensions.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"], 
+        "js": ["content.js"]
+      }
+    ]
+  }
+
